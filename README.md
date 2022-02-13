@@ -31,6 +31,19 @@ You can use NOVA to view the files (by opening 'project.nova'):
 
 https://github.com/hcmlab/nova
 
+# Load & export CSV files using NOVA
+- Launch Nova application
+- Run FILE -> Load Files. Select the desired kinect.skel.stream file to load skeleton data onto Nova.
+- Run FILE -> Export -> Selected Signal -> To CSV. Specify name and location of the csv file to be exported.
+
+# Convert Nova CSV to NAO Skeleton CSV
+- Run kinect2-record\python\skel_kinect2.py python script with path of the input file.
+```
+python skel_kinect2.py ..\log\filename.csv
+```
+This script will automatically generate filename_processed.csv which is in NAO Skeleton csv format.
+- Run draw_2d.py to visualize the Nova CSV file in OpenCV image window.
+
 # Notes
 At first start select and audio device and a video compression codec. For video compression we recommend 'utvideo' available from (fast and lossless):
 
